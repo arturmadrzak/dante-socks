@@ -1,0 +1,18 @@
+logoutput: stderr
+
+internal: %internal% port = %port%
+external: %external%
+socksmethod: none
+clientmethod: none
+user.privileged: sockd
+user.unprivileged: nobody
+
+client pass {
+        from: 0.0.0.0/0 to: 0.0.0.0/0
+        log: connect error disconnect
+}
+
+socks pass {
+        from: 0.0.0.0/0 to: 0.0.0.0/0
+        log: connect error disconnect
+}
